@@ -1,0 +1,7 @@
+# Amp Guitar
+#### Video Demo: https://www.loom.com/share/2e15acd5ee9243ae86cc97e6ec069318
+#### Description: Amp Guitar is a single page web application that provides tools to amplify guitarists' skills. The first tool provided is a scale finder. The finder feature will help the user/guitarist write melodies and solos for any particular section of a song.
+#### The scale finder will prompt the user to complete a form. Once the form is submitted. The chords entered will go into a function that determines what scales will sound good, while being played over the top of the provided chords. Then render those scales on the screen in the form of buttons.
+#### When a scale button is pressed the app will take in the root chord and compare it to a scale formula to determine what notes are in that particular scale. Onced the notes are identified the app will map over the fretboard object to determine the coordinates of those notes and render a diagram.
+#### This diagram will inform the user/guitarist of all the places they can play over the fretboard that will sound good with the chords that were given when the form was submitted.
+#### There are a few other items that make up the foundation of this application, like: contact and about us pages. I will continue to build on this application over the next few months. I would like to implement more features that will help guitarists understand and implement music theory into their creative process.  
