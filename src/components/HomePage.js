@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import guitarGuy from "/Users/ashtonbennett/Desktop/projects/amp_guitar/src/images/afro_guitarist.png";
-import "/Users/ashtonbennett/Desktop/projects/amp_guitar/src/styles/mainNavButton.css";
+import "/Users/ashtonbennett/Desktop/projects/amp_guitar/src/styles/buttonandbreakpoints.css";
 
 const mainContent = {
   display: "flex",

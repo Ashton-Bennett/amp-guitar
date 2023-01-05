@@ -1,4 +1,4 @@
-import "/Users/ashtonbennett/Desktop/projects/amp_guitar/src/styles/mainNavButton.css";
+import "/Users/ashtonbennett/Desktop/projects/amp_guitar/src/styles/buttonandbreakpoints.css";
 
 // style for the scale buttons
 const findButton = {

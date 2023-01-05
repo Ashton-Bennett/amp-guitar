@@ -1,5 +1,5 @@
 import { Fretboard } from "@moonwave99/fretboard.js";
-import "/Users/ashtonbennett/Desktop/projects/amp_guitar/src/styles/mainNavButton.css";
+import "/Users/ashtonbennett/Desktop/projects/amp_guitar/src/styles/buttonandbreakpoints.css";
 import React, { useEffect } from "react";
 import { fretboardObj } from "./ScaleButton";
 
