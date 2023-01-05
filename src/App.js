@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Finder from "./components/finderPage/Finder.js";
 import About from "./components/About.js";
 import Contact from "./components/contactPage/Contact.js";
+
 function App() {
   const main = {
     width: "100vw",

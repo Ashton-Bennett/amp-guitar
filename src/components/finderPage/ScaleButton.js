@@ -3,7 +3,7 @@ import "/Users/ashtonbennett/Desktop/projects/amp_guitar/src/styles/mainNavButto
 // style for the scale buttons
 const findButton = {
   color: "white",
-  width: "5em",
+  width: "30%",
   backgroundColor: "#2EB718",
   marginLeft: "1em",
   marginBottom: "1em",
@@ -15,6 +15,7 @@ const findButton = {
   cursor: "pointer",
   fontFamily: "Jacques Francois",
   display: "flex",
+  // flex: "1",
   alignItems: "center",
   justifyContent: "center",
 };
@@ -255,8 +256,72 @@ const scaleFormulas = {
   Mixolydian: ["1", "2", "3", "4", "5", "6", "b7"],
   Aeolian: ["1", "2", "b3", "4", "5", "b6", "b7"],
   Locrian: ["1", "b2", "b3", "4", "b5", "b6", "b7"],
+  "Minor Pentatonic": ["1", "b3", "4", "5", "b7"],
+  "Major Pentatonic": ["1", "2", "3", "5", "6"],
+  "Major Arpeggio": ["1", "3", "5"],
+  "Minor Arpeggio": ["1", "b3", "5"],
+  "Minor Blues": ["1", "b3", "4", "b5", "5", "b7"],
+  "Major Blues": ["1", "2", "b3", "3", "5", "6"],
+  "Harmonic Minor": ["1", "2", "b3", "4", "5", "b6", "7"],
+  "Harmonic Major": ["1", "2", "3", "4", "5", "b6", "7"],
+  Byzantine: ["1", "b2", "3", "4", "5", "b6", "7"],
+  Enigmatic: ["1", "b2", "3", "#4", "#5", "#6", "7"],
+  Persian: ["1", "b2", "3", "4", "b5", "b6", "7"],
+  "Javanese Pelog": ["1", "b2", "b3", "4", "5", "6", "b7"],
+  "Neapolitan Minor": ["1", "b2", "b3", "4", "5", "b6", "7"],
+  "Hungarian Minor": ["1", "2", "b3", "#4", "5", "b6", "7"],
+  Hindu: ["1", "2", "3", "4", "5", "b6", "b7"],
+  Romanian: ["1", "b2", "3", "#4", "5", "6", "b7"],
+  "Spanish Gipsy": ["1", "b2", "3", "4", "5", "b6", "b7"],
+  Arabian: ["1", "2", "3", "4", "b5", "b6", "b7"],
+  Asian: ["1", "b2", "3", "4", "b5", "6", "b7"],
+  Prometheus: ["1", "2", "3", "#4", "6", "b7"],
+  Ritsu: ["1", "b2", "b3", "4", "b6", "b7"],
+  "In Sen": ["1", "b2", "4", "5", "b7"],
+  Iwato: ["1", "b2", "4", "b5", "b7"],
+  Scottish: ["1", "2", "4", "5", "6"],
+  "Han-Kumoi": ["1", "2", "4", "5", "b6"],
+  "Hon-Kumoi-Joshi": ["1", "b2", "4", "5", "b6"],
+  Egyptian: ["1", "2", "4", "5", "b7"],
+  Hirajoshi: ["1", "2", "b3", "5", "b6"],
+  "Balinese Pelog": ["1", "b2", "b3", "5", "b6"],
 };
 
+// adjusts the chord param to be displayed. Ex: C#m returns C# for displaying C# Dorian.
+export const rootNoteFinder = (chordOne) => {
+  return chordOne[1] === "#" ? chordOne[0].concat("#") : chordOne[0];
+};
+
+export function notesOfAScale(name, chord) {
+  const chordOne = rootNoteFinder(chord);
+
+  var notesToDisplay = [];
+  // compares the scale formula with the chordOne ref scale(major scale)
+  // also handles cases of when flats are provided and converts to a sharp
+  for (let i = 0; i < scaleFormulas[name].length; i++) {
+    var scaleDegree = scaleFormulas[name][i];
+
+    if (scaleDegree.length === 1) {
+      notesToDisplay = notesToDisplay.concat(
+        scaleReferance[rootNoteFinder(chordOne).toUpperCase()][scaleDegree - 1]
+      );
+    } else {
+      if (scaleDegree.includes("b")) {
+        scaleDegree = scaleDegree[1];
+        notesToDisplay = notesToDisplay.concat(
+          flatNote(scaleReferance[rootNoteFinder(chordOne)][scaleDegree - 1])
+        );
+      } else {
+        scaleDegree = scaleDegree[1];
+        notesToDisplay = notesToDisplay.concat(
+          sharpNote(scaleReferance[rootNoteFinder(chordOne)][scaleDegree - 1])
+        );
+      }
+    }
+  }
+
+  return notesToDisplay;
+}
 // creates the button that onced clicked will display the fretboard diagram
 const ScaleButton = ({
   name,
@@ -271,40 +336,15 @@ const ScaleButton = ({
     await setCoordinatesToShow([]);
 
     // takes the information needed from the form to find the key and sets name of the scale to be rendered
-    const alteredChordOne = chordOne
-      .split("")
-      .filter((x) => x !== "M")
-      .join("");
+    setScaleToDisplay(`${rootNoteFinder(chordOne)} ${name}`);
 
-    setScaleToDisplay(`${alteredChordOne} ${name}`);
+    const notes = notesOfAScale(name, chordOne);
 
-    var notesToDisplay = [];
-    // compares the scale formula with the chordOne ref scale(major scale)
-    // also handles cases of when flats are provided and converts to a sharp
-    for (let i = 0; i < scaleFormulas[name].length; i++) {
-      var scaleDegree = scaleFormulas[name][i];
-
-      if (scaleDegree.length === 1) {
-        notesToDisplay = notesToDisplay.concat(
-          scaleReferance[alteredChordOne.toUpperCase()][i]
-        );
-      } else {
-        if (scaleDegree.includes("b")) {
-          notesToDisplay = notesToDisplay.concat(
-            flatNote(scaleReferance[alteredChordOne][i])
-          );
-        } else {
-          notesToDisplay = notesToDisplay.concat(
-            sharpNote(scaleReferance[alteredChordOne][i])
-          );
-        }
-      }
-    }
     // loops over the fretboard obj to find the coordinates needed to display and sets the state to display them
     var coordinates = [];
 
-    for (let i = 0; i < notesToDisplay.length; i++) {
-      coordinates = coordinates.concat(fretboardObj[notesToDisplay[i]]);
+    for (let i = 0; i < notes.length; i++) {
+      coordinates = coordinates.concat(fretboardObj[notes[i]]);
     }
     setCoordinatesToShow(coordinates);
   };

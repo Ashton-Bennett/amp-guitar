@@ -107,7 +107,7 @@ const HomePage = () => {
           </div>
         </div>
         <div style={imgWrapper}>
-          <img src={guitarGuy} alt="jammer"></img>
+          <img src={guitarGuy} alt="jammer" className="guitaristImg"></img>
           <div style={circle1}> </div>
           <div style={circle2}> </div>
           <div style={circle3}> </div>

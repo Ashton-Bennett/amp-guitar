@@ -8,13 +8,16 @@ const footerStyle = {
   fontSize: "1rem",
   color: "inherit",
   height: "60px",
+  left: "0",
+  right: "0",
+  marginbottom: "1em",
 };
 
 const footNav = {
   display: "flex",
   listStyle: "none",
   justifyContent: "space-between",
-  marginLeft: "4.5rem",
+  marginLeft: "4.5em",
 };
 
 const copywrite = {
