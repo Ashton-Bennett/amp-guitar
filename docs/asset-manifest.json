@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.109675c3.css",
-    "main.js": "/static/js/main.be3c78f0.js",
-    "static/media/afro_guitarist.png": "/static/media/afro_guitarist.b8f5a1a9812bfa5d401b.png",
-    "static/media/logos.svg": "/static/media/logos.73d5a57a8b45ed079ed3dcf9ffdc9672.svg",
-    "index.html": "/index.html",
-    "main.109675c3.css.map": "/static/css/main.109675c3.css.map",
-    "main.be3c78f0.js.map": "/static/js/main.be3c78f0.js.map"
+    "main.css": "/amp-guitar/static/css/main.109675c3.css",
+    "main.js": "/amp-guitar/static/js/main.5ce06e09.js",
+    "static/media/afro_guitarist.png": "/amp-guitar/static/media/afro_guitarist.b8f5a1a9812bfa5d401b.png",
+    "static/media/logos.svg": "/amp-guitar/static/media/logos.73d5a57a8b45ed079ed3dcf9ffdc9672.svg",
+    "index.html": "/amp-guitar/index.html",
+    "main.109675c3.css.map": "/amp-guitar/static/css/main.109675c3.css.map",
+    "main.5ce06e09.js.map": "/amp-guitar/static/js/main.5ce06e09.js.map"
   },
   "entrypoints": [
     "static/css/main.109675c3.css",
-    "static/js/main.be3c78f0.js"
+    "static/js/main.5ce06e09.js"
   ]
 }

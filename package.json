@@ -19,7 +19,7 @@
     "svguitar": "^2.2.0",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://ashton-bennett.github.io/amp-guitar",
+  "homepage": "https://ashton-bennett.github.io/amp-guitar/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
