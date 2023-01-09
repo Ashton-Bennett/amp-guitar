@@ -73,19 +73,13 @@
   cursor: pointer;
 }
 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-  html {
-    font-size: 8px;
-  }
-  .guitaristImg {
-    display: none;
-  }
-}
-
 @media only screen and (min-width: 300px) {
   html {
     font-size: 6px;
+  }
+
+  .guitaristImg {
+    display: none;
   }
 }
 

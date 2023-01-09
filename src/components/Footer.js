@@ -5,7 +5,7 @@ const footerStyle = {
   borderTop: "solid 1px",
   alignItems: "center",
   justifyContent: "space-between",
-  fontSize: "1rem",
+  fontSize: "1.35rem",
   color: "inherit",
   height: "60px",
   left: "0",

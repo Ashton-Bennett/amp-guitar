@@ -10,6 +10,10 @@ const brandLogo = {
   marginLeft: "3rem",
 };
 
+const logoImage = {
+  width: "5rem",
+};
+
 const logoName = {
   marginLeft: "1rem",
   fontSize: "2em",
@@ -38,7 +42,11 @@ const header = () => {
   return (
     <header style={headerStyle}>
       <Link to="/" style={brandLogo}>
-        <img src={logo} alt="company logo in the shape of muscal note" />
+        <img
+          style={logoImage}
+          src={logo}
+          alt="company logo in the shape of muscal note"
+        />
         <div style={logoName}>Amp Guitar</div>
       </Link>
       <nav>

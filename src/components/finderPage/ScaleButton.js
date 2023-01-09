@@ -15,7 +15,6 @@ const findButton = {
   cursor: "pointer",
   fontFamily: "Jacques Francois",
   display: "flex",
-  // flex: "1",
   alignItems: "center",
   justifyContent: "center",
 };
