@@ -10,7 +10,7 @@ const findButton = {
   padding: ".5em .5em",
   borderRadius: ".5em",
   border: "none",
-  fontSize: "1.2rem",
+  fontSize: "1rem",
   boxShadow: "0px 16px 15px rgba(0, 0, 0, 0.80)",
   cursor: "pointer",
   fontFamily: "Jacques Francois",
