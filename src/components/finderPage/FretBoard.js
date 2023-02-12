@@ -9,6 +9,7 @@ const syleToShowUp = {
   background: "white",
   borderRadius: "5px",
   border: "5px solid black",
+  fontSize: "4rem",
 };
 
 const FretBoard = ({ coordinatesToShow, chordOne }) => {
@@ -25,12 +26,13 @@ const FretBoard = ({ coordinatesToShow, chordOne }) => {
       middleFretColor: "#E3941C",
       middleFretWidth: 6,
       scaleFrets: false,
-      height: 300,
-      width: 1200,
-      dotSize: 25,
+      height: 500,
+      width: 1300,
+      dotSize: 40,
       dotFill: "#201D1D",
       dotStrokeColor: "#000000",
       fretNumbersColor: "#000000",
+      fretNumbersMargin: 50,
       font: "inherit",
       highlightPadding: 0,
       highlightRadius: 5,
