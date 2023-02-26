@@ -237,7 +237,7 @@ export const scaleReferance = {
   D: ["D", "E", "F#", "G", "A", "B", "C#"],
   "D#": ["D#", "F", "G", "G#", "A#", "C", "D"],
   E: ["E", "F#", "G#", "A", "B", "C#", "D#"],
-  F: ["F", "G", "A", "Bb", "C", "D", "E"],
+  F: ["F", "G", "A", "A#", "C", "D", "E"],
   "F#": ["F#", "G#", "A#", "B", "C#", "D#", "F"],
   G: ["G", "A", "B", "C", "D", "E", "F#"],
   "G#": ["G#", "A#", "C", "C#", "D#", "F", "G"],
@@ -306,10 +306,12 @@ export function notesOfAScale(name, chord) {
       );
     } else {
       if (scaleDegree.includes("b")) {
+        console.log(scaleDegree, scaleDegree[1]);
         scaleDegree = scaleDegree[1];
         notesToDisplay = notesToDisplay.concat(
           flatNote(scaleReferance[rootNoteFinder(chordOne)][scaleDegree - 1])
         );
+        console.log(notesToDisplay);
       } else {
         scaleDegree = scaleDegree[1];
         notesToDisplay = notesToDisplay.concat(
@@ -338,7 +340,7 @@ const ScaleButton = ({
     setScaleToDisplay(`${rootNoteFinder(chordOne)} ${name}`);
 
     const notes = notesOfAScale(name, chordOne);
-
+    console.log(notes);
     // loops over the fretboard obj to find the coordinates needed to display and sets the state to display them
     var coordinates = [];
 
